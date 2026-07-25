@@ -21,7 +21,7 @@ Turn the starter backlog into a personal practice planner. A learner can view, f
 
 ## Delivery stages
 
-1. Define the user problem, non-goals, data contract, and acceptance criteria in the PR draft.
+1. Create `assignment/capstone-frontend-short-description` from updated `main`, then define the user problem, non-goals, data contract, and acceptance criteria in the PR draft.
 2. Draw the server/client and trust boundaries before implementation.
 3. Deliver the smallest vertical slice and keep checks green.
 4. Add error, empty, loading, success, and recovery behavior.

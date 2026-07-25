@@ -10,7 +10,7 @@ Follow the shared [`docs/git-workflow.md`](../docs/git-workflow.md) and submit t
 
 ## Steps
 
-1. Create `assignment/ms-ts-types` from updated `main`.
+1. Create `assignment/ms-ts-types-short-description` from updated `main`.
 2. Define a discriminated status type and a precise item schema in `src/lib/`.
 3. Parse an `unknown` payload into typed practice items. Return an explicit success/error result instead of casting.
 4. Update the page or list to consume only validated data.

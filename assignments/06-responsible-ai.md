@@ -10,7 +10,7 @@ Add a small “clear filters” interaction to the practice backlog. You may ask
 
 ## Steps
 
-1. Create `assignment/ms-ai-workflow` from updated `main`.
+1. Create `assignment/ms-ai-workflow-short-description` from updated `main`.
 2. Write a short acceptance contract before prompting.
 3. Use only public repository context; never paste secrets, private learner data, or organization data.
 4. Record a compact decision log in the PR: suggestions accepted, changed, and rejected, with reasons.

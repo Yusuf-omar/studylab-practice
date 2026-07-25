@@ -10,7 +10,7 @@ Learners need a detail page for each practice item and a form to update its refl
 
 ## Steps
 
-1. Create `assignment/ms-next-route` from updated `main`.
+1. Create `assignment/ms-next-route-short-description` from updated `main`.
 2. Add `app/practice/[id]/page.tsx` as a Server Component.
 3. Add route-level `loading.tsx`, `error.tsx`, and not-found behavior.
 4. Create a Server Action that treats form values as unknown, validates them, and returns a typed result.

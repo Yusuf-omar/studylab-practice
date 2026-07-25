@@ -12,7 +12,7 @@ The starter app is a Next.js project with a checked-in lockfile and a credential
 
 ## Steps
 
-1. Create `assignment/tt-deploy-vercel` from updated `main`.
+1. Create `assignment/tt-deploy-vercel-short-description` from updated `main`.
 2. Run the repository checks locally and confirm the lockfile is unchanged by `npm ci`.
 3. Import your fork into Vercel, keep the detected Next.js build settings, and configure only public/non-secret values.
 4. Open the deployment URL, exercise the backlog filter, and inspect one narrow viewport.

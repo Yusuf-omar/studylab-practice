@@ -9,7 +9,7 @@ The practice workspace needs one small documentation improvement. Choose a confu
 ## Steps
 
 1. Synchronize your fork using `docs/git-workflow.md`.
-2. Create `assignment/ms-git-collab` from updated `main`.
+2. Create `assignment/ms-git-collab-short-description` from updated `main`.
 3. Make one focused documentation improvement.
 4. Ask another learner or your mentor to change the same sentence on a temporary local branch, or create that conflicting edit yourself. Merge it into your assignment branch and resolve the conflict deliberately.
 5. Run the verification commands and open a pull request into `main` in your fork, following [`docs/git-workflow.md`](../docs/git-workflow.md).

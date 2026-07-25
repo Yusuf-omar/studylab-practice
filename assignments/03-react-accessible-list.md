@@ -10,7 +10,7 @@ The practice backlog needs status filtering and a refresh action that behaves li
 
 ## Steps
 
-1. Create `assignment/ms-react-ui` from updated `main`.
+1. Create `assignment/ms-react-ui-short-description` from updated `main`.
 2. Extend `PracticeList` with a controlled status filter.
 3. Add a small asynchronous data helper and model loading, empty, error, and success states explicitly.
 4. Keep filtering derived from source data; do not synchronize duplicated filtered data with an effect.

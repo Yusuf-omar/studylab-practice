@@ -12,7 +12,7 @@ Model a real asynchronous request in the practice backlog with explicit loading,
 
 ## Steps
 
-1. Create `assignment/tt-fix-broken-fetch` from updated `main`.
+1. Create `assignment/tt-fix-broken-fetch-short-description` from updated `main`.
 2. Define the request result and error boundary before changing the component.
 3. Render distinct loading, empty, error, and success states with useful status text.
 4. Keep search/status filtering derived with `useMemo` or equivalent; do not synchronize duplicate filtered state in an effect.

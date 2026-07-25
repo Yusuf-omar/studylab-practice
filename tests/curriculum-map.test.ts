@@ -46,6 +46,24 @@ describe("curriculum-map contract", () => {
     expect(catalog.assignments.filter((assignment) => assignment.tier === "capstone")).toHaveLength(1);
   });
 
+  it("uses the shared assignment branch format in every assignment brief", () => {
+    for (const assignment of catalog.assignments) {
+      const source = readFileSync(join(process.cwd(), assignment.path), "utf8");
+      expect(source, assignment.id).toContain(
+        `assignment/${assignment.id}-short-description`,
+      );
+    }
+  });
+
+  it("lists every assignment as an unchecked personal tracker item", () => {
+    const index = readFileSync(join(process.cwd(), "assignments", "README.md"), "utf8");
+    expect(index).toContain("| Status | ID | Assignment | Evidence |");
+    expect(index).toContain("replace that assignment's `- [ ]` with `- [x]`");
+    for (const assignment of catalog.assignments) {
+      expect(index, assignment.id).toContain(`| - [ ] | \`${assignment.id}\` |`);
+    }
+  });
+
   it("rejects duplicate ids and paths, unknown modules, and unsupported submissions", () => {
     const malformed = structuredClone(catalog);
     malformed.assignments[1].id = malformed.assignments[0].id;

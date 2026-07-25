@@ -12,7 +12,7 @@ The app has a home backlog but no detail route. Add `app/practice/[id]/page.tsx`
 
 ## Steps
 
-1. Create `assignment/tt-404-page` from updated `main`.
+1. Create `assignment/tt-404-page-short-description` from updated `main`.
 2. Add the dynamic page and a `notFound()` branch for unknown practice IDs.
 3. Add route-level `loading.tsx` and `error.tsx` states where the route needs asynchronous work.
 4. Provide a useful heading, a link back to the backlog, and a stable accessible error message.

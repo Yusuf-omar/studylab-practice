@@ -12,7 +12,7 @@ The starter app has a simple page shell and a small CSS surface. Add a navigatio
 
 ## Steps
 
-1. Create `assignment/tt-responsive-navbar` from updated `main`.
+1. Create `assignment/tt-responsive-navbar-short-description` from updated `main`.
 2. Define the navigation landmarks and a small set of real links before styling.
 3. Make the layout adapt at a narrow viewport without horizontal scrolling or clipped labels.
 4. If you add a menu button, implement an accessible name, expanded state, Escape handling, and focus behavior; do not hide links from keyboard users.

@@ -10,7 +10,7 @@ Choose one behavior added in an earlier assignment whose regression would harm a
 
 ## Steps
 
-1. Create `assignment/ms-realworld-ci` from updated `main`.
+1. Create `assignment/ms-realworld-ci-short-description` from updated `main`.
 2. Write down the failure you want the test to catch.
 3. Prove the new test fails for the broken behavior, then restore the implementation.
 4. Improve one diagnostic detail in `.github/workflows/ci.yml` without renaming or weakening the required `Practice quality` job. The baseline already runs install, lint, typecheck, catalog validation, tests, and build.

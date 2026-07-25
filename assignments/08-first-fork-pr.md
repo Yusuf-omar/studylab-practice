@@ -13,7 +13,7 @@ The starter workspace is already runnable. Choose one unclear sentence in `READM
 ## Steps
 
 1. Fork `TechArc-io/studylab-practice` and clone your fork.
-2. Synchronize `main`, then create `assignment/tt-fork-first-pr` from it.
+2. Synchronize `main`, then create `assignment/tt-fork-first-pr-short-description` from it.
 3. Make one focused documentation improvement and inspect the diff.
 4. Run the verification commands, commit with a descriptive message, and push the branch.
 5. Open a pull request into `main` in your fork, add the verification output, and request review.
@@ -24,7 +24,7 @@ Submit the pull-request URL, the branch name, and a short before/after explanati
 
 ## Acceptance checks
 
-- The change is on `assignment/tt-fork-first-pr`, not `main`.
+- The change is on `assignment/tt-fork-first-pr-short-description`, not `main`.
 - The diff is focused, keeps the original meaning, and contains no conflict markers or secrets.
 - The PR targets `main`, explains the change, and includes reproducible verification evidence.
 
