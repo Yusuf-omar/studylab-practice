@@ -1,10 +1,6 @@
 # Astudylab Practice
-<<<<<<< HEAD
 # This is an add to teset the conflict changes 
-
-=======
-# This is the second text to check the confilct in git
->>>>>>> temp-conflict-branch
+# a new test to test the pull req commits
 The official public practice workspace for the [Astudylab](https://astudylab.com) frontend learning path.
 
 This repository is designed to be forked once and improved throughout the curriculum. Each assignment adds evidence to the same GitHub history: focused branches, reviewed pull requests, tests, and a final deployed capstone.
