@@ -1,5 +1,5 @@
 # Astudylab Practice
-
+# This is the second text to check the confilct in git
 The official public practice workspace for the [Astudylab](https://astudylab.com) frontend learning path.
 
 This repository is designed to be forked once and improved throughout the curriculum. Each assignment adds evidence to the same GitHub history: focused branches, reviewed pull requests, tests, and a final deployed capstone.
