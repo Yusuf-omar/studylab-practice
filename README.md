@@ -51,4 +51,4 @@ npm run check      # complete local quality gate
 
 ## Evidence, not shortcuts
 
-Your forks and PRs track your learning. Write clear commits, explain your choices, and document your testing in your own words. Use AI only when permitted—you are fully responsible for all submitted code.
+Your fork and pull requests are part of your learning record. Keep commits understandable, describe what you verified, and explain decisions in your own words. AI assistance is allowed only when the assignment permits it; you remain responsible for every submitted line.
