@@ -2,7 +2,7 @@
 
 The official public practice workspace for the [Astudylab](https://astudylab.com) frontend learning path.
 
-This repository is designed to be forked once and improved throughout the curriculum. Each assignment adds evidence to the same GitHub history: focused branches, reviewed pull requests, tests, and a final deployed capstone.
+This repository is designed to be forked once and updated throughout the curriculum. Each assignment adds evidence to the same GitHub history: focused branches, reviewed pull requests, tests, and a final deployed capstone.
 
 ## Start here
 
@@ -26,14 +26,14 @@ The canonical `TechArc-io/studylab-practice` repository stays a clean starting p
 
 ## Learning workspace
 
-| Area | Purpose |
-| --- | --- |
+| Area                           | Purpose                                                                                       |
+| ------------------------------ | --------------------------------------------------------------------------------------------- |
 | [`foundations/`](foundations/) | Semantic HTML, CSS, JavaScript, accessibility, and browser debugging without framework noise. |
-| [`app/`](app/) | Next.js App Router pages used by the React, routing, data, and capstone assignments. |
-| [`src/`](src/) | Typed components, data boundaries, validation, and reusable domain code. |
-| [`tests/`](tests/) | Unit and component safety nets learners expand during the pathway. |
-| [`assignments/`](assignments/) | Stable task contracts aligned with Astudylab milestone IDs. |
-| [`docs/`](docs/) | Setup, Git workflow, review expectations, and architecture guidance. |
+| [`app/`](app/)                 | Next.js App Router pages used by the React, routing, data, and capstone assignments.          |
+| [`src/`](src/)                 | Typed components, data boundaries, validation, and reusable domain code.                      |
+| [`tests/`](tests/)             | Unit and component safety nets learners expand during the pathway.                            |
+| [`assignments/`](assignments/) | Stable task contracts aligned with Astudylab milestone IDs.                                   |
+| [`docs/`](docs/)               | Setup, Git workflow, review expectations, and architecture guidance.                          |
 
 Read [CURRICULUM.md](CURRICULUM.md) for the progression and [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
