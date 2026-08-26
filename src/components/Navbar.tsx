@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 export function Navbar() {
@@ -18,7 +19,7 @@ export function Navbar() {
       className="navbar"
       aria-label="Main navigation"
       onKeyDown={handleKeyDown
-        
+
       }
     >
       <button
@@ -33,10 +34,10 @@ export function Navbar() {
       </button>
       <ul className={`nav-links ${menuOpen ? "open" : "closed"}`}>
         <li>
-          <a href="/" aria-current={isHomeActive ? "page" : undefined}
+          <Link href="/" 
           className={isHomeActive ? "active": ""}>
             Home
-          </a>
+          </Link>
         </li>
         <li>
           <a href="https://github.com/TechArc-io/studylab-practice/tree/main/assignments">
