@@ -10,9 +10,7 @@ describe("Navbar",()=>{
         render(<Navbar/>);
         expect(screen.getByRole("navigation")).toBeInTheDocument();
     });
-});
-
-   it("opens the menue when the button is clicked",()=>{
+it("opens the menue when the button is clicked",()=>{
         render(<Navbar/>);
         const button =screen.getByRole("button",{name:/open menu/i});
         fireEvent.click(button);
@@ -25,6 +23,8 @@ describe("Navbar",()=>{
         fireEvent.click(button);
         fireEvent.click(button);
         expect(button).toHaveAttribute("aria-expanded","false");
+        expect(screen.getByRole("list")).toHaveAttribute("class","nav-links closed");
+
     });
 
     it("closes the menue when Escape is pressed",()=>{
@@ -33,7 +33,7 @@ describe("Navbar",()=>{
         fireEvent.click(button);
         fireEvent.keyDown(button,{key:"Escape"});
         expect(button).toHaveAttribute("aria-expanded","false");
-
+expect(screen.getByRole("list")).toHaveAttribute("class","nav-links closed");
     
     });
 
@@ -44,3 +44,14 @@ describe("Navbar",()=>{
         fireEvent.keyDown(button,{key:"Escape"});
         expect(document.activeElement).toBe(button);
     });
+
+    it ("opens the menu when the button is clicked",()=>{
+        render(<Navbar/>);
+        const button =screen.getByRole("button",{name:/open menu/i});
+        fireEvent.click(button);
+expect(screen.getByRole("list")).toBeVisible();        
+    })
+
+});
+
+   
