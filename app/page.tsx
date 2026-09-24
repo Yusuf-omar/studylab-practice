@@ -1,8 +1,12 @@
+import { Navbar } from "@/src/components/Navbar";
+
 import { PracticeList } from "@/src/components/PracticeList";
 import { practiceItems } from "@/src/data/practice-items";
 
 export default function HomePage() {
   return (
+    <>
+    <Navbar/>
     <main>
       <header className="hero">
         <p className="eyebrow">Astudylab practice workspace</p>
@@ -26,5 +30,6 @@ export default function HomePage() {
         <PracticeList initialItems={practiceItems} />
       </section>
     </main>
+    </>
   );
 }
