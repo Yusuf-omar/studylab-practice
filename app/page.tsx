@@ -1,6 +1,4 @@
 import { PracticeList } from "@/src/components/PracticeList";
-import { practiceItems } from "@/src/data/practice-items";
-
 export default function HomePage() {
   return (
     <main>
@@ -8,8 +6,9 @@ export default function HomePage() {
         <p className="eyebrow">Astudylab practice workspace</p>
         <h1>Build evidence, one focused change at a time.</h1>
         <p className="lede">
-          This starter product grows with your curriculum. Keep the baseline green,
-          work on a focused branch, and make each pull request easy to review.
+          This starter product grows with your curriculum. Keep the baseline
+          green, work on a focused branch, and make each pull request easy to
+          review.
         </p>
       </header>
 
@@ -23,7 +22,7 @@ export default function HomePage() {
             View assignments
           </a>
         </div>
-        <PracticeList initialItems={practiceItems} />
+        <PracticeList />
       </section>
     </main>
   );
