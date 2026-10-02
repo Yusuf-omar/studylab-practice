@@ -25,6 +25,6 @@ export default function HomePage() {
         </div>
         <PracticeList initialItems={practiceItems} />
       </section>
-    </main>
+      </main>
   );
 }
