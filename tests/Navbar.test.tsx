@@ -10,14 +10,20 @@ describe("Navbar",()=>{
         render(<Navbar/>);
         expect(screen.getByRole("navigation")).toBeInTheDocument();
     });
-it("opens the menue when the button is clicked",()=>{
-        render(<Navbar/>);
-        const button =screen.getByRole("button",{name:/open menu/i});
-        fireEvent.click(button);
-        expect(button).toHaveAttribute("aria-expanded","true");
-    });
+it("opens the menu when the button is clicked", () => {
+  render(<Navbar />);
+  const button = screen.getByRole("button", { name: /open menu/i });
 
-    it ("close the menu when the button is clicked again",()=>{
+  fireEvent.click(button);
+
+  expect(button).toHaveAttribute("aria-expanded", "true");
+  expect(screen.getByRole("list")).toHaveAttribute(
+    "class",
+    "nav-links open",
+  );
+});
+
+    it ("closes the menu when the button is clicked again",()=>{
         render(<Navbar/>);
         const button =screen.getByRole("button",{name:/open menu/i});
         fireEvent.click(button);
@@ -27,7 +33,7 @@ it("opens the menue when the button is clicked",()=>{
 
     });
 
-    it("closes the menue when Escape is pressed",()=>{
+    it("closes the menu when Escape is pressed",()=>{
         render(<Navbar/>);
         const button =screen.getByRole("button",{name: /open menu/i});
         fireEvent.click(button);
@@ -45,12 +51,6 @@ expect(screen.getByRole("list")).toHaveAttribute("class","nav-links closed");
         expect(document.activeElement).toBe(button);
     });
 
-    it ("opens the menu when the button is clicked",()=>{
-        render(<Navbar/>);
-        const button =screen.getByRole("button",{name:/open menu/i});
-        fireEvent.click(button);
-expect(screen.getByRole("list")).toBeVisible();        
-    })
 
 });
 
