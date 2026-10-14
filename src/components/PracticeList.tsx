@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { PracticeItem } from "@/src/data/practice-items";
 import { loadPracticeItems } from "@/src/data/practice-data";
 
@@ -9,12 +9,17 @@ type RequestStatus = "loading" | "error" | "success";
 type PracticeListProps = {
   requestItems?: () => Promise<PracticeItem[]>;
 };
+
 export function PracticeList({
   requestItems = loadPracticeItems,
 }: PracticeListProps) {
   const [status, setStatus] = useState<RequestStatus>("loading");
   const [items, setItems] = useState<PracticeItem[]>([]);
   const [query, setQuery] = useState("");
+  const [showRetry, setShowRetry] = useState(false);
+  const focusAfterRetry = useRef(false);
+  const filterRef = useRef<HTMLInputElement>(null);
+  const requestVersion = useRef(0);
 
   const filteredItems = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -26,54 +31,86 @@ export function PracticeList({
     );
   }, [items, query]);
 
-  const loadItems = useCallback(async () => {
-    setStatus("loading");
+  const loadItems = useCallback(
+    async (isRetry = false) => {
+      const version = ++requestVersion.current;
+      if (isRetry) {
+        focusAfterRetry.current = true;
+      }
 
-    try {
-      const nextItems = await requestItems();
-      setItems(nextItems);
-      setStatus("success");
-    } catch {
-      setStatus("error");
-    }
-  }, [requestItems]);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    const request = async () => {
       try {
         const nextItems = await requestItems();
 
-        if (cancelled) return;
+        if (version !== requestVersion.current) return;
 
         setItems(nextItems);
         setStatus("success");
       } catch {
-        if (cancelled) return;
+        if (version !== requestVersion.current) return;
 
         setStatus("error");
+        setShowRetry(true);
+        focusAfterRetry.current = false;
       }
-    };
+    },
+    [requestItems],
+  );
 
-    void request();
+  useEffect(() => {
+    let cancelled = false;
+    const version = ++requestVersion.current;
+
+    async function fetchItems() {
+      try {
+        const nextItems = await requestItems();
+
+        if (cancelled || version !== requestVersion.current) return;
+
+        setItems(nextItems);
+        setStatus("success");
+      } catch {
+        if (cancelled || version !== requestVersion.current) return;
+
+        setStatus("error");
+        setShowRetry(true);
+        focusAfterRetry.current = false;
+      }
+    }
+
+    void fetchItems();
 
     return () => {
       cancelled = true;
+      requestVersion.current += 1;
     };
   }, [requestItems]);
+
+  useEffect(() => {
+    if (status !== "success" || !focusAfterRetry.current) return;
+
+    filterRef.current?.focus();
+    focusAfterRetry.current = false;
+  }, [status]);
 
   return (
     <div>
       {status === "loading" && <p role="status">Loading practice items...</p>}
 
-      {status === "error" && (
-        <div>
-          <p role="alert">Failed to load practice items.</p>
-          <button type="button" onClick={() => void loadItems()}>
-            Retry
-          </button>
-        </div>
+      {status === "error" && <p role="alert">Failed to load practice items.</p>}
+
+      {showRetry && status !== "success" && (
+        <button
+          type="button"
+          aria-disabled={status === "loading"}
+          onClick={() => {
+            if (status !== "loading") {
+              setStatus("loading");
+              void loadItems(true);
+            }
+          }}
+        >
+          Retry
+        </button>
       )}
 
       {status === "success" && (
@@ -81,15 +118,20 @@ export function PracticeList({
           <div className="filter">
             <label htmlFor="practice-filter">Filter the backlog</label>
             <input
+              ref={filterRef}
               id="practice-filter"
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Try “accessible”"
+              placeholder="Try accessible"
               type="search"
               value={query}
             />
           </div>
 
-          {filteredItems.length ? (
+          {items.length === 0 ? (
+            <p className="empty" role="status">
+              No practice items are available.
+            </p>
+          ) : filteredItems.length > 0 ? (
             <ul className="practice-list" aria-live="polite">
               {filteredItems.map((item) => (
                 <li className="practice-card" key={item.id}>
